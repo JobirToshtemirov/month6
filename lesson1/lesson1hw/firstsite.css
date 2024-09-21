@@ -1,5 +1,3 @@
-@import url( 'firstsite.html'   );
-
 *{
     margin: 0;
     padding: 0;
@@ -231,6 +229,7 @@ home-content .btn-box::before {
     animation: showRight 1s ease forwards;
     animation-delay: 2.5s;
     z-index: 2;
+}
 
 .home-sci a:hover {
     color: #081b29;
@@ -301,9 +300,9 @@ home-content .btn-box::before {
     animation-delay: 3s;
     z-index: 100;
 }
-/*KEYFRAMES ANIMATION*/
+
     @keyframes showRight {
-    100 {
+    100% {
         width: 0;
     }
 }
@@ -313,5 +312,4 @@ home-content .btn-box::before {
         pointer-events: auto;
 
     }
-}   
 }
