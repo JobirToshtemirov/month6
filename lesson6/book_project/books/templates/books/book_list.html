@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kitoblar ro'yxati</title>
+</head>
+<body>
+    <h1>Kitoblar</h1>
+    <a href="{% url 'book_add' %}">Yangi kitob qo'shish</a>
+    <ul>
+        {% for book in books %}
+            <li>
+                {{ book.title }} - {{ book.author }}
+                <a href="{% url 'book_edit' book.id %}">O'zgartirish</a>
+                <a href="{% url 'book_delete' book.id %}">O'chirish</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

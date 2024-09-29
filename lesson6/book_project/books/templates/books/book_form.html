@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kitob qo'shish</title>
+</head>
+<body>
+    <h1>{% if book %}Kitobni tahrirlash{% else %}Yangi kitob qo'shish{% endif %}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="title">Sarlavha:</label>
+        <input type="text" name="title" value="{{ book.title|default:'' }}"><br>
+
+        <label for="author">Muallif:</label>
+        <input type="text" name="author" value="{{ book.author|default:'' }}"><br>
+
+        <label for="description">Tavsif:</label>
+        <textarea name="description">{{ book.description|default:'' }}</textarea><br>
+
+        <label for="published_date">Chop etilgan sanasi:</label>
+        <input type="date" name="published_date" value="{{ book.published_date|default:'' }}"><br>
+
+        <button type="submit">Saqlash</button>
+    </form>
+</body>
+</html>
