@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Kitoblar ro'yxati</h1>
+<a href="{% url 'book_add' %}">Yangi kitob qo'shish</a>
+<ul>
+    {% for book in books %}
+    <li>{{ book.title }} - {{ book.author }}
+        <a href="{% url 'book_edit' book.id %}">Tahrirlash</a>
+        <a href="{% url 'book_delete' book.id %}">O'chirish</a>
+    </li>
+    {% endfor %}
+</ul>
+<h1>Yangi kitob qo'shish</h1>
+<form method="post">
+    {% csrf_token %}
+    <label>Sarlavha:</label><input type="text" name="title"><br>
+    <label>Muallif:</label><input type="text" name="author"><br>
+    <label>Tavsif:</label><textarea name="description"></textarea><br>
+    <label>Nashr sanasi:</label><input type="date" name="published_date"><br>
+    <button type="submit">Saqlash</button>
+</form>
+<a href="{% url 'book_list' %}">Orqaga qaytish</a>
+
+
+</body>
+</html>
