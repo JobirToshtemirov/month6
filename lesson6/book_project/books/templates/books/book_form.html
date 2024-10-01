@@ -16,8 +16,9 @@
         <label for="description">Tavsif:</label>
         <textarea name="description">{{ book.description|default:'' }}</textarea><br>
 
-        <label for="published_date">Chop etilgan sanasi:</label>
+        <<label for="published_date">Chop etilgan sanasi:</label>
         <input type="date" name="published_date" value="{{ book.published_date|default:'' }}"><br>
+
 
         <button type="submit">Saqlash</button>
     </form>
