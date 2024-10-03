@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'users',
     'adds',
     'forms',
+    'user',
 ]
 
 MIDDLEWARE = [

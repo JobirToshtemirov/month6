@@ -7,6 +7,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('form/', include('forms.urls', namespace="form")),
+    path('user/', include('user.url', namespace="register")),
     path('', include('news.urls', namespace="news")),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
